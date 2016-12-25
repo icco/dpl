@@ -35,6 +35,7 @@ module DPL
     autoload :NPM,              'dpl/provider/npm'
     autoload :Openshift,        'dpl/provider/openshift'
     autoload :OpsWorks,         'dpl/provider/ops_works'
+    autoload :Onesie,           'dpl/provider/onesie'
     autoload :Packagecloud,     'dpl/provider/packagecloud'
     autoload :Pages,            'dpl/provider/pages'
     autoload :PuppetForge,      'dpl/provider/puppet_forge'
