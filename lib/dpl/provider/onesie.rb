@@ -32,8 +32,7 @@ module DPL
       def upload_archive
         log "uploading application archive"
         headers = "-H Onesie-Key:#{option(:key)} -H Onesie-Secret:#{option(:secret)} -H Onesie-Domain:#{option(:domain)}"
-        command = "curl -sv #{Shellwords.escape(put_url)} -X POST #{headers} -F \"file=@#{archive_file}\""
-        log command
+        command = "curl #{Shellwords.escape(put_url)} -X POST #{headers} -F \"file=@#{archive_file}\""
         context.shell command
       end
 
