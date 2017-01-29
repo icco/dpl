@@ -22,7 +22,9 @@ module DPL
 
       def pack_archive
         log "creating application archive"
-        context.shell "tar -zvcf #{archive_file} --exclude .git ."
+        Dir.chdir(options.fetch(:local_dir, Dir.pwd)) do
+          context.shell "tar -zvcf #{archive_file} --exclude .git ."
+        end
       end
 
       def put_url
