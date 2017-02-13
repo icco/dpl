@@ -36,7 +36,6 @@ module DPL
         log "uploading application archive"
         headers = "-H Onesie-Key:#{option(:key)} -H Onesie-Secret:#{option(:secret)} -H Onesie-Domain:#{option(:domain)}"
         command = "curl #{Shellwords.escape(put_url)} -X POST #{headers} -F \"file=@#{archive_file}\""
-        puts command
         result = %x[#{command}]
         data = JSON.parse(result)
         p data
